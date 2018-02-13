@@ -17,10 +17,6 @@ app.use(bodyParser.json());
 // static file-serving middleware
 app.use(express.static(resolve(__dirname, '..', 'public')));
 
-// app.get('/*', function (req, res) {
-//   res.sendFile(path.join(__dirname, '../public'));
-// });
-
 // sends index.html for any requests that don't match API routes
 app.get('/*', function(req, res) {
   res.redirect('/');

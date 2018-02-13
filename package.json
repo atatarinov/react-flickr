@@ -12,9 +12,15 @@
   "author": "Alex Tatarinov",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.17.1",
     "express": "^4.16.2",
+    "jsonp": "^0.2.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
