@@ -17,15 +17,19 @@ app.use(bodyParser.json());
 // static file-serving middleware
 app.use(express.static(resolve(__dirname, '..', 'public')));
 
+// app.get('/*', function (req, res) {
+//   res.sendFile(path.join(__dirname, '../public'));
+// });
+
+// sends index.html for any requests that don't match API routes
+app.get('/*', function(req, res) {
+  res.redirect('/');
+});
+
 app.use(function (req, res, next) {
   const err = new Error('Not found.');
   err.status = 404;
   next(err);
-});
-
-// sends index.html for any requests that don't match API routes
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../public'));
 });
 
 app.use(function (err, req, res, next) {
