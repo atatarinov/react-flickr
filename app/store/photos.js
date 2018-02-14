@@ -11,13 +11,8 @@ const postSearchTerm = searchTerm => ({ type: POST_SEARCH_TERM, searchTerm });
 
 // THUNK CREATORS
 export const updateSearchTerm = (searchTerm) => function thunk(dispatch) {
-
-
-
+  dispatch(postSearchTerm(searchTerm));
 };
-
-
-
 
 export const fetchPhotos = (tags) => function thunk(dispatch) {
   const apiKey = secrets.apiKey;
@@ -29,19 +24,19 @@ export const fetchPhotos = (tags) => function thunk(dispatch) {
     });
 };
 
+// STATE
 const initialState = {
   photos: [],
-  searchTerm: 'cat',
-  tags: ''
+  searchTerm: ''
 };
 
 // REDUCER
 export default function (state = initialState, action) {
   switch (action.type) {
     case GET_PHOTOS:
-      return { ...state, photos: action.photos };
+      return action.photos;
     case POST_SEARCH_TERM:
-      return Object.assign({}, state, { searchTerm: action.searchTerm });
+      return { ...state, searchTerm: action.searchTerm };
     default:
       return state;
   }

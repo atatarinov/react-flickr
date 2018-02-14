@@ -1,51 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import store from '../store';
-import { fetchPhotos, updateSearchTerm } from '../store/photos';
+import store, { fetchPhotos, updateSearchTerm } from '../store';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
 
 class Landing extends Component {
 
-  state = {
-    photos: [],
-    text: '',
-    tags: ''
-  }
-
   loadPhotos = () => {
-    // let tags = this.state.text;
-    // const apiKey = secrets.apiKey;
-    // let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${tags}&per_page=30&format=json&nojsoncallback=1`;
-
-    // axios.get(url)
-    //   .then(res => {
-    //     this.setState({ photos: res.data.photos.photo });
-    //   });
-    store.dispatch(fetchPhotos('dog'));
+    store.dispatch(fetchPhotos(this.props.photos.searchTerm));
   }
 
   handleChange = (event) => {
-    this.setState({ text: event.target.value });
+    store.dispatch(updateSearchTerm(event.target.value));
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
     this.loadPhotos();
-    this.setState({ text: '' });
+    store.dispatch(updateSearchTerm(''));
   }
 
   render() {
 
-    if (this.props.photos.photos.photos) {
-      const { photo } = this.props.photos.photos.photos;
-      // console.log('******', this.props.photos.photos.photos);
-      console.log('******', photo);
+    let { searchTerm } = this.props.photos;
+
+    if (this.props.photos.photos.photo) {
+      const { photo } = this.props.photos.photos;
+
       return (
         <div>
           <h1>Flickr</h1>
-          <Navbar handleChange={this.handleChange} text={this.state.text} handleSubmit={this.handleSubmit} />
+          <Navbar handleChange={this.handleChange} text={searchTerm || ''} handleSubmit={this.handleSubmit} />
           <br />
           {
             photo.map(pic => {
@@ -60,7 +46,7 @@ class Landing extends Component {
       return (
         <div>
           <h1>Flickr</h1>
-          <Navbar handleChange={this.handleChange} text={this.state.text} handleSubmit={this.handleSubmit} />
+          <Navbar handleChange={this.handleChange} text={searchTerm} handleSubmit={this.handleSubmit} />
           <br />
           <Footer />
         </div>
@@ -71,10 +57,7 @@ class Landing extends Component {
 
 const mapStateToProps = (state) => ({
   searchTerm: state.searchTerm,
-  tags: state.tags,
   photos: state.photos
 });
 
-const mapDispatchToProps = { updateSearchTerm, fetchPhotos };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Landing);
+export default connect(mapStateToProps)(Landing);
