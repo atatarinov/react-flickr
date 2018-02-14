@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 export default class Landing extends Component {
 
@@ -45,6 +46,7 @@ export default class Landing extends Component {
             return <img key={pic.id} alt="" src={picUrl} />;
           })
         }
+        <Footer />
       </div>
     );
   }
