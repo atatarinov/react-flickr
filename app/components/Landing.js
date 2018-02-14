@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import secrets from '../../secrets';
 
 export default class Landing extends Component {
 
@@ -13,7 +14,7 @@ export default class Landing extends Component {
 
   loadPhotos = () => {
     let tags = this.state.text;
-    const apiKey = 'ca3783111609d69139840916b7a01ad2';
+    const apiKey = secrets.apiKey;
     let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${tags}&per_page=30&format=json&nojsoncallback=1`;
 
     axios.get(url)

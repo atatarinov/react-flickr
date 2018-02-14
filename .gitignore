@@ -1,3 +1,9 @@
+#node modules
 node_nodules
+
+#api key
+secrets.js
+
+#bundle files
 bundle.js
 bundle.js.map
