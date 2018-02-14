@@ -1,10 +1,9 @@
 import React from 'react';
-
-import Search from './Search';
+import Landing from './Landing';
 
 export default function App() {
 
   return (
-    <Search />
+    <Landing />
   );
 }

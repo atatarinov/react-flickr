@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
 import Navbar from './Navbar';
 
-export default class Search extends Component {
+export default class Landing extends Component {
 
   state = {
     photos: [],
