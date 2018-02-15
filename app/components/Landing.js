@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import store, { fetchPhotos, updateSearchTerm } from '../store';
-
 import Navbar from './Navbar';
 import Footer from './Footer';
 
 class Landing extends Component {
 
   loadPhotos = () => {
-    store.dispatch(fetchPhotos(this.props.photos.searchTerm));
+    store.dispatch(fetchPhotos(this.props.searchTerm.searchTerm));
   }
 
   handleChange = (event) => {
@@ -23,7 +22,7 @@ class Landing extends Component {
 
   render() {
 
-    let { searchTerm } = this.props.photos;
+    let { searchTerm } = this.props.searchTerm;
 
     if (this.props.photos.photos.photo) {
       const { photo } = this.props.photos.photos;
@@ -31,7 +30,7 @@ class Landing extends Component {
       return (
         <div>
           <div className="navbar">
-            <Navbar handleChange={this.handleChange} text={searchTerm || ''} handleSubmit={this.handleSubmit} />
+            <Navbar handleChange={this.handleChange} text={searchTerm} handleSubmit={this.handleSubmit} />
           </div>
           <div className="container" id="card-container">
             {

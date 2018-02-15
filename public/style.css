@@ -2,8 +2,6 @@ body {
   background: #F3F5F6;
 }
 
-
-
 /***
 MAIN CONTAINER
 ***/
@@ -11,6 +9,10 @@ MAIN CONTAINER
   padding: 0;
 }
 
+
+/***
+NAV-BAR
+***/
 
 .navbar {
   background: rgba(0, 0, 0, 0.7);
@@ -38,6 +40,15 @@ MAIN CONTAINER
   margin-top: 0.4rem;
 }
 
+#submit {
+  height: 2.4rem;
+  margin-left: 3px;
+}
+
+/***
+CARD CONTAINER
+***/
+
 #card-container {
   display: flex;
   flex-grow: 1;
@@ -58,10 +69,9 @@ MAIN CONTAINER
   height: auto;
 }
 
-#submit {
-  height: 2.4rem;
-  margin-left: 3px;
-}
+/***
+FOOTER
+***/
 
 .footer {
   background: rgba(0, 0, 0, 0.7);
