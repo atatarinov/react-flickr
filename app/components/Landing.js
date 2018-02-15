@@ -30,24 +30,26 @@ class Landing extends Component {
 
       return (
         <div>
-          <h1>Flickr</h1>
-          <Navbar handleChange={this.handleChange} text={searchTerm || ''} handleSubmit={this.handleSubmit} />
-          <br />
-          {
-            photo.map(pic => {
-              let picUrl = `https://farm${pic.farm}.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}.jpg`;
-              return <img key={pic.id} alt="" src={picUrl} />;
-            })
-          }
-          <Footer />
+          <div className="navbar">
+            <Navbar handleChange={this.handleChange} text={searchTerm || ''} handleSubmit={this.handleSubmit} />
+          </div>
+          <div className="container" id="card-container">
+            {
+              photo.map(pic => {
+                let picUrl = `https://farm${pic.farm}.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}.jpg`;
+                return <img className="card" key={pic.id} alt="" src={picUrl} />;
+              })
+            }
+          </div>
         </div>
       );
     } else {
       return (
-        <div>
-          <h1>Flickr</h1>
-          <Navbar handleChange={this.handleChange} text={searchTerm} handleSubmit={this.handleSubmit} />
-          <br />
+        <div className="container-fluid">
+          <div className="navbar">
+            <Navbar handleChange={this.handleChange} text={searchTerm} handleSubmit={this.handleSubmit} />
+          </div>
+          <div className="container" id="main" />
           <Footer />
         </div>
       );
