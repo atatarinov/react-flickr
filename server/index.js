@@ -18,9 +18,9 @@ app.use(bodyParser.json());
 app.use(express.static(resolve(__dirname, '..', 'public')));
 
 // sends index.html for any requests that don't match API routes
-app.get('/*', function(req, res) {
-  res.redirect('/');
-});
+// app.get('/*', function(req, res) {
+//   res.redirect('/');
+// });
 
 app.use(function (req, res, next) {
   const err = new Error('Not found.');
@@ -34,7 +34,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500).send(err.message || 'Internal server error.');
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log(`The server is listening on port ${port}`);
 });
