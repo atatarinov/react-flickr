@@ -30,7 +30,11 @@ class Landing extends Component {
       return (
         <div>
           <div className="navbar">
-            <Navbar handleChange={this.handleChange} text={searchTerm} handleSubmit={this.handleSubmit} />
+            <Navbar
+              handleChange={this.handleChange}
+              text={searchTerm}
+              handleSubmit={this.handleSubmit}
+            />
           </div>
           <div className="container" id="card-container">
             {
@@ -46,7 +50,11 @@ class Landing extends Component {
       return (
         <div className="container-fluid">
           <div className="navbar">
-            <Navbar handleChange={this.handleChange} text={searchTerm} handleSubmit={this.handleSubmit} />
+            <Navbar
+              handleChange={this.handleChange}
+              text={searchTerm}
+              handleSubmit={this.handleSubmit}
+            />
           </div>
           <div className="container" id="main" />
           <Footer />

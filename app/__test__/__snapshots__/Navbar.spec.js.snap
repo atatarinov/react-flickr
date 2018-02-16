@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar renders correnctly 1`] = `
+<div
+  className="container-fluid"
+>
+  <h1
+    id="main-title"
+  >
+    flickr
+  </h1>
+  <form
+    className="form-group"
+    onSubmit={undefined}
+  >
+    <label
+      className="form-container"
+    >
+      <input
+        className="form-control"
+        name="name"
+        onChange={undefined}
+        placeholder="Find your photos"
+        type="text"
+        value={undefined}
+      />
+    </label>
+    <button
+      className="btn btn-light"
+      id="submit"
+      type="button"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;

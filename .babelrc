@@ -1,0 +1,13 @@
+{
+  "presets": ["env", "react"],
+  "env": {
+    "test": {
+      "presets": ["env", "stage-0", "react"],
+      "plugins": [
+        "babel-plugin-transform-es2015-modules-commonjs"
+      ]
+    }
+  }
+}
+
+
