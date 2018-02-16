@@ -15,6 +15,7 @@ export default function Navbar(props) {
           placeholder="Find your photos"
           value={text}
           onChange={handleChange}
+          required
         />
       </label>
       <button type="button" className="btn btn-light" id="submit">Submit</button>
