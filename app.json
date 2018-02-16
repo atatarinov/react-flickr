@@ -1,8 +1,0 @@
-{
-  "name": "react-flickr-demo",
-  "description": "Simulation of Flickr in React",
-  "repository": "https://react-flickr-demo.herokuapp.com/",
-  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
-  "keywords": ["node", "express", "heroku"],
-  "image": "heroku/nodejs"
-}

@@ -1,7 +1,7 @@
 {
   "name": "react-flickr",
   "version": "1.0.0",
-  "description": "",
+  "description": "Flickr simulation app in react",
   "main": "index.js",
   "scripts": {
     "test": "jest",

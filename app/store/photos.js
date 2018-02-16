@@ -6,7 +6,7 @@ import { getPhotos } from './actionCreators';
 
 // THUNK CREATORS
 export const fetchPhotos = (tags) => function thunk(dispatch) {
-  const apiKey = secrets.apiKey;
+  const apiKey = process.env.apiKey || secrets.apiKey;
   let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${tags}&per_page=30&format=json&nojsoncallback=1`;
   return axios.get(url)
     .then(res => res.data)
