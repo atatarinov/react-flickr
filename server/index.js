@@ -3,7 +3,7 @@
 const express = require('express');
 const app = express();
 
-const path = require('path');
+// const path = require('path');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const { resolve } = require('path');
@@ -34,7 +34,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500).send(err.message || 'Internal server error.');
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, function () {
   console.log(`The server is listening on port ${port}`);
 });
