@@ -13,7 +13,7 @@ To run the developer version:
 
 
 # Online demo
-  - (https://blog.heroku.com/deploying-react-with-zero-configuration)
+  - (https://react-flickr-demo.herokuapp.com/)
 
 
 
